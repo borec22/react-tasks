@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import classes from './HW2.module.css';
 import Affairs from './Affairs';
 
 // types
@@ -42,7 +43,7 @@ function HW2() {
    const deleteAffairCallback = (_id: number) => setAffairs(deleteAffair(affairs, _id));
 
    return (
-      <div>
+      <div className={classes.App}>
          <hr/>
          homeworks 2
 

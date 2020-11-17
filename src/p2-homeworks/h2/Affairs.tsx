@@ -1,4 +1,5 @@
 import React from "react";
+import classes from './Affairs.module.css';
 import Affair from "./Affair";
 import {AffairType, FilterType} from './HW2';
 
@@ -23,14 +24,14 @@ function Affairs(props: AffairsPropsType) {
     const setLow = () => { props.setFilter('low') };
 
     return (
-        <div>
+        <div className={classes.affairs}>
 
             {mappedAffairs}
 
             <button onClick={setAll}>All</button>
-            <button onClick={setHigh}>High</button>
-            <button onClick={setMiddle}>Middle</button>
-            <button onClick={setLow}>Low</button>
+            <button onClick={setHigh} style={{backgroundColor: 'red'}} >High</button>
+            <button onClick={setMiddle} style={{backgroundColor: 'orange'}} >Middle</button>
+            <button onClick={setLow} style={{backgroundColor: 'green'}} >Low</button>
         </div>
     );
 }
