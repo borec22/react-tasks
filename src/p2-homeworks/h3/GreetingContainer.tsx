@@ -1,9 +1,10 @@
-import React, {useState} from "react";
-import Greeting from "./Greeting";
+import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
+import Greeting from './Greeting';
+import {UserType} from './HW3';
 
 type GreetingContainerPropsType = {
-    users: any // need to fix any
-    addUserCallback: any // need to fix any
+   users: Array<UserType>
+   addUserCallback: (name: string) => void
 }
 
 // более простой и понятный для новичков
@@ -11,28 +12,55 @@ type GreetingContainerPropsType = {
 
 // более современный и удобный для про :)
 // уровень локальной логики
+
 const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUserCallback}) => { // деструктуризация пропсов
-    const [name, setName] = useState<any>(""); // need to fix any
-    const [error, setError] = useState<any>(""); // need to fix any
+   const [name, setName] = useState<string>('');
+   const [error, setError] = useState<string>('');
 
-    const setNameCallback = (e: any) => { // need to fix any
-        setName(""); // need to fix
-    };
-    const addUser = () => {
-        alert(`Hello  !`); // need to fix
-    };
+   const setNameCallbackOnChange = (e: ChangeEvent<HTMLInputElement>) => {
+      const text = e.currentTarget.value;
 
-    const totalUsers = 0; // need to fix
+      if (text === '') {
+         setError('Enter your name');
+      } else {
+         setError('');
+      }
 
-    return (
-        <Greeting
-            name={name}
-            setNameCallback={setNameCallback}
-            addUser={addUser}
-            error={error}
-            totalUsers={totalUsers}
-        />
-    );
+      setName(text);
+   }
+
+   const setNameCallbackKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
+      if (e.charCode === 13) {
+         addUser();
+      }
+   }
+
+   const addUser = () => {
+      if (name === '') {
+         setError('Enter your name')
+      } else {
+         addUserCallback(name);
+         setTimeout(() => {
+            alert(`Hello, ${name}!`)
+         });
+
+         setError('');
+         setName('');
+      }
+   };
+
+   const totalUsers = users.length;
+
+   return (
+      <Greeting
+         name={name}
+         setNameCallbackOnChange={setNameCallbackOnChange}
+         setNameCallbackKeyPress={setNameCallbackKeyPress}
+         addUser={addUser}
+         error={error}
+         totalUsers={totalUsers}
+      />
+   );
 }
 
 export default GreetingContainer;
