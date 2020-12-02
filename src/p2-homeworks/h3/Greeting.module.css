@@ -6,26 +6,19 @@
    margin: 10px;
 }
 .error {
-   border: 2px solid red;
+   background-color: red;
 }
 .errorMessage {
    color: red;
+   display: block;
 }
 .input {
-   font-size: 1.3em;
-   padding: 3px;
-   border-radius: 5px;
+   margin-right: 10px;
+   display: block;
 }
 .button {
-   background-color: #00c851;
    border-radius: 3px;
-   padding: 3px;
-   width: 70px;
-   margin-left: 5px;
-   margin-right: 10px;
-   color: white;
-   border: 1px solid #00c851;
-   font-size: 1.3em;
+   display: block;
 }
 .total {
    width: 25px;
@@ -38,4 +31,5 @@
    padding: 3px;
    display: inline-block;
    padding-left: 10px;
+   margin-left: 330px;
 }

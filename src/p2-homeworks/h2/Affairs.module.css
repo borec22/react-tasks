@@ -10,4 +10,10 @@
 .green {
    color: green;
 }
+.button {
+   display: block;
+}
+.button:hover {
+   color: red;
+}
 

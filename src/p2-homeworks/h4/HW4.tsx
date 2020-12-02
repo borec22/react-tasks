@@ -9,10 +9,15 @@ function HW4() {
     const error = text ? "" : "error";
     const showAlert = () => {
         if (error) {
-            alert("введите текст...");
+           setTimeout(() => {
+              alert("введите текст...");
+           }, 300)
         } else {
-            alert(text); // если нет ошибки показать текст
+           setTimeout(() => {
+              alert(text);
+           }, 300)
         }
+        setText('');
     }
 
     const [checked, setChecked] = useState<boolean>(false);
@@ -35,7 +40,6 @@ function HW4() {
 
                 {/*should work (должно работать)*/}
                 <SuperButton
-                    red // пропсу с булевым значением не обязательно указывать true
                     onClick={showAlert}
                 >
                     delete {/*// название кнопки попадёт в children*/}
@@ -46,7 +50,7 @@ function HW4() {
                     checked={checked}
                     onChangeChecked={setChecked}
                 >
-                    some text {/*// этот текст попадёт в children*/}
+                    Some text {/*// этот текст попадёт в children*/}
                 </SuperCheckbox>
 
                 {/*// onChange тоже должен работать*/}
