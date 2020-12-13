@@ -19,16 +19,21 @@ const Greeting: React.FC<GreetingPropsType> = (
 
    return (
       <div className={s.greeting}>
-         <div>
+         <div className={s.rows}>
+            <div>
+               <SuperInputText value={name}
+                               error={error}
+                               onChange={setNameCallbackOnChange}
+                               onKeyPress={setNameCallbackKeyPress}
+                               dimention='small'
+               />
+            </div>
+            <div>
+               <SuperButton onClick={addUser} size={'medium'} variant={'success'} className={s.button}>add</SuperButton>
+            </div>
             <div className={s.total}>
                <span>{totalUsers}</span>
             </div>
-            <SuperInputText value={name}
-                            onChange={setNameCallbackOnChange}
-                            onKeyPress={setNameCallbackKeyPress}
-                            className={`${error ? s.error : ''} ${s.input}`}/>
-            {error && <span className={s.errorMessage}>{error}</span>}
-            <SuperButton onClick={addUser} className={s.button}>add</SuperButton>
          </div>
       </div>
    );

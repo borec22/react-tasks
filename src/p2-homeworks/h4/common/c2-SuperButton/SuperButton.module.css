@@ -1,24 +1,44 @@
 .button {
-   font-size: medium;
-   background-color: #41ab5d;
-   color: white;
-   width: 700px;
-   height: 45px;
-   margin-bottom: 10px;
-   border: #41ab5d;
-   margin-top: 10px;
-   outline-color: #41ab5d;
+   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+   font-weight: 700;
+   border: 0;
+   border-radius: 3em;
+   cursor: pointer;
+   display: inline-block;
+   line-height: 1;
+   outline-style: none;
 }
-.button:hover, .red:hover, .green:hover {
-   background-color: #31904B;
+.button:hover {
+   font-size: small;
 }
 
+.primary {
+   background-color: #008cba;
+}
+.secondary {
+   background-color: #e7e7e7;
+}
+.success {
+   background-color: #4caf50;
+}
+.warning {
+   background-color: goldenrod;
+}
+.danger {
+   background-color: #f44336;
+}
+.small {
+   font-size: 12px;
+   padding: 10px 16px;
+}
+.medium {
+   font-size: 14px;
+   padding: 11px 20px;
+}
+.large {
+   font-size: 16px;
+   padding: 12px 24px;
+}
 .red {
-    background: red;
-}
-.green {
-   background: green;
-}
-.yellow {
-   background: yellow;
+   background-color: red;
 }

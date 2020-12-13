@@ -4,28 +4,34 @@ import s from './SuperButton.module.css';
 // тип пропсов обычной кнопки, children в котором храниться название кнопки там уже описан
 type DefaultButtonPropsType = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
 
+type VariantType = 'primary' | 'secondary' | 'success' | 'danger' | 'warning';
+type SizeType = 'small' | 'medium' | 'large';
+
 type SuperButtonPropsType = DefaultButtonPropsType & {
    red?: boolean
-   green?: boolean
-   yellow?: boolean
+   size?: SizeType
+   variant?: VariantType
 }
 
 const SuperButton: React.FC<SuperButtonPropsType> = (
    {
-      red, className, green, yellow,
+      variant,
+      size,
+      red,
+      className,
       ...restProps// все остальные пропсы попадут в объект restProps, там же будет children
    }
 ) => {
-   const finalClassName = `${red ? s.red :
-      green ? s.green :
-         yellow ? s.yellow :
-            ''} ${s.button} ${className}`;
+   const finalClassName = `
+      ${s.button} 
+      ${variant ? s[variant] : ''}
+      ${size ? s[size] : ''} 
+      ${red ? s.red : ''}
+   `;
 
-   return (
-      <button
-         className={finalClassName}
-         {...restProps} // отдаём кнопке остальные пропсы если они есть (children там внутри)
-      />
+   return (<>
+         <button className={finalClassName} {...restProps} />
+      </>
    );
 }
 

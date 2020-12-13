@@ -39,14 +39,20 @@ function Affairs(props: AffairsPropsType) {
 
          {/*<button onClick={setAll}>All</button>*/}
          <SuperButton onClick={setAll}
+                      variant='primary'
+                      size='large'
                       className={classes.button}>All</SuperButton>
          <SuperButton onClick={setHigh}
-                      red
+                      variant='danger'
+                      size='large'
                       className={classes.button}>High</SuperButton>
          <SuperButton onClick={setMiddle}
-                      yellow
+                      variant='warning'
+                      size='large'
                       className={classes.button}>Middle</SuperButton>
          <SuperButton onClick={setLow}
+                      variant='success'
+                      size='large'
                       className={classes.button}>Low</SuperButton>
       </div>
    );

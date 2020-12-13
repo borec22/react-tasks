@@ -1,18 +1,31 @@
 .superInput {
-   color: #444;
-   outline-color: lime;
-   font-size: medium;
-   width: 680px;
-   padding: 8px;
-   margin-top: 8px;
-   margin-bottom: 5px;
-   border-radius: 3px;
-   border: 3px solid lime;
+   display: block;
+   width: 400px;
+   padding-left: 1rem;
+   padding-right: 1rem;
+   border-radius: 0.25rem;
+   border: 1px solid;
+   border-color: inherit;
+   background-color: #fff;
+}
+
+.small {
+   height: 2rem;
+   font-size: 0.875rem;
+}
+
+.medium {
+   height: 2.5rem;
+   font-size: 1rem;
+}
+
+.large {
+   height: 3rem;
+   font-size: 1.25rem;
 }
 
 .errorInput {
-    border: 3px solid lime;
-    background: red;
+    border: 3px solid red;
 }
 
 .error {

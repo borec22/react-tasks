@@ -32,6 +32,7 @@ function HW4() {
                 {/*should work (должно работать)*/}
                 <SuperInputText
                     value={text}
+                    dimention={'small'}
                     onChangeText={setText}
                     onEnter={showAlert}
                     error={error}
@@ -39,9 +40,7 @@ function HW4() {
                 />
 
                 {/*should work (должно работать)*/}
-                <SuperButton
-                    onClick={showAlert}
-                >
+                <SuperButton onClick={showAlert} variant='danger' size='medium'>
                     delete {/*// название кнопки попадёт в children*/}
                 </SuperButton>
 
